@@ -6,26 +6,8 @@ function facilityDisplay() {
                 handler: function () {
                     createUploadForm('center-info-v', 'addfacility','Add Facility');
                 }
-            }, '-',
-            { title:'Search',
-             tooltip:'Find record',
-             xtype:'textfield',
-             name:'searchfield',
-             id:'searchfield',
-             iconCls:'remove',
-             listeners: {'render': function(cmp) {
-                  cmp.getEl().on('keyup', function( event, el ) {
-                 	 var ke= event.getKey();
-            	if((ke==39)||(ke==13)||(ke==112)||(ke==37)||(ke==34)||(ke==38)||(ke==20)){
-            	var selVal = Ext.getCmp('tst').getValue();
-//              var searchitem=el.value;
-//             	store.proxy.extraParams = { searhfield:selVal,searhvalue:searchitem};
-//            	 store.load();
-            	 }
+            }, '-'
 
-                  });
-                }}
-             }
 
 ];
     createDisplayView( 'facility','center-info-v','Master Facility List',toolBars);
@@ -48,7 +30,7 @@ var closebtn= Ext.get('close-btn');
 	});
 	var store = Ext.create('Ext.data.Store', {
     model: 'GridViewDataModel',
-	
+
     proxy: {
         type: 'ajax',
          url: 'server/read.php?facilityType=' + searchitem,
@@ -94,7 +76,7 @@ var closebtn= Ext.get('close-btn');
             columns: [
             new Ext.grid.RowNumberer({ width: 50, sortable: true }),
              { header: 'Facility Code', width: 120, sortable: true, id: 'code', dataIndex: 'code' },
-            { header: 'Facility Name', width: 120, sortable: true, id: 'name', dataIndex: 'name' },
+            { header: 'Facility Name', width: 300, sortable: true, id: 'name', dataIndex: 'name' },
 
             { header: 'Status', width: 120, sortable: true, id: 'status', dataIndex: 'status' },
 

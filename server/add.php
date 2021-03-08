@@ -43,7 +43,7 @@ $voided=0;
 // make sure required data is captured
 if(
     !empty($name) &&
-    !empty($status)
+    !empty($status) && strlen($name)>=3
 ){
 
     $facility = new Facility($db);
