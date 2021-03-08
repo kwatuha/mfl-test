@@ -8,11 +8,11 @@ obj.innerHTML='';
 Ext.onReady(function() {
 Ext.tip.QuickTipManager.init();
 Ext.apply(Ext.form.VTypes, {
-            payrollFileUpload: function (val, field) {
-                var fileName = /^.*\.(pdf)$/i;
+            facilityFileUpload: function (val, field) {
+                var fileName = /^.*\.(csv)$/i;
                 return fileName.test(val);
             },
-            payrollFileUploadText: 'Payroll file must be in .pdf format'
+            facilityFileUploadText: 'Facility file must be in CSV format'
         });
 
 
@@ -57,7 +57,7 @@ var formWin = Ext.create('Ext.window.Window', {
               			value:'',
                         fieldLabel: 'Facility Name',
                         allowBlank: false,
-                        minLength: 1,
+                        minLength: 3,
                         padding: '10 0 0 0',
 
               },

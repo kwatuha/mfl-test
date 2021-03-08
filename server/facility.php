@@ -130,11 +130,6 @@ function updateFacility($facilityCode,$name,$status){
 
 }
 
-function generateFacilityCode(){
-
-return 'MFL00001010201';
-
-}
 
 function getCurstomSearch(){
 

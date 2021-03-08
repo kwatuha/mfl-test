@@ -10,7 +10,8 @@ header("Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers
 include_once 'databaseconf.php';
  
 // Include facility object
-include_once 'Facility.php';
+include_once 'facility.php';
+include_once 'mflcodegenerator.php';
 
 // Exit processing of facility data if the method is not post
  if ($_SERVER['REQUEST_METHOD'] != 'POST') {
@@ -45,10 +46,12 @@ if(
     !empty($status)
 ){
 
-
-    // Create the facility property values
     $facility = new Facility($db);
-    $code=$facility->generateFacilityCode();
+    $mflcodeGenerator = new MFLcodeGenerator($db);
+
+   $newFacilityNamePart= substr(strtoupper($name),0,3);
+    $code=$mflcodeGenerator->createNewCode($newFacilityNamePart);
+
     $facility->code = $code;
     $facility->name = $name;
     $facility->status = $status;
