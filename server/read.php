@@ -6,7 +6,7 @@ header("Access-Control-Allow-Methods: GET");
 
 
 include_once 'databaseconf.php';
-include_once 'Facility.php';
+include_once 'facility.php';
 
 
 // instantiate database and facility object

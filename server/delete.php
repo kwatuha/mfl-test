@@ -4,7 +4,7 @@
 include_once 'databaseconf.php';
 
 // Include facility object
-include_once 'Facility.php';
+include_once 'facility.php';
 
 $facilityCode=htmlspecialchars(strip_tags($_POST['code']));
 

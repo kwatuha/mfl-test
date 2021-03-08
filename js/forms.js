@@ -54,6 +54,7 @@ var formWin = Ext.create('Ext.window.Window', {
             {
                         xtype: 'textfield',
                         name: 'name',
+                        anchor:'80%',
               			value:'',
                         fieldLabel: 'Facility Name',
                         allowBlank: false,
@@ -61,15 +62,20 @@ var formWin = Ext.create('Ext.window.Window', {
                         padding: '10 0 0 0',
 
               },
-            {
-                        xtype: 'textfield',
-                        name: 'status',
-              			value:'',
-                        fieldLabel: 'Status',
-                        allowBlank: false,
-                        minLength: 1,
+              {
+                              xtype:'combo',
+                              anchor:'80%',
+                             fieldLabel:'Status',
+                             id:'status',
+                             name:'status',
+                             valueField: 'division',
+                             queryMode:'local',
+                             store:["Operational","Suspended","Relocated","Performance Review"],
+                             displayField:'division',
+                             autoSelect:true,
+                             forceSelection:true
 
-              },
+             }
             ],
 
             buttons: [{
