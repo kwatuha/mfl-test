@@ -18,3 +18,6 @@ For instance creating a new facility can be achieved through usage of
 "name": "Matayos Health Center",
 "status": "Operational"
 }
+
+App Demo:
+A demo of the app is available at https://intellibizafrica.co.ke/mfl
